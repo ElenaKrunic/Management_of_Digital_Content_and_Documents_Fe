@@ -2,12 +2,12 @@
     <form @submit.prevent="addBuyer">
         <div style="width: 50%; background:white; padding: 5%; border-radius:2%;">
             <div class="mb-3">
-                <label class="form-label" for="firstName">First name:</label>
-                <input class="form-control" type="text" id="firstName" v-model="formData.firstName" />
+                <label class="form-label" for="firstname">First name:</label>
+                <input class="form-control" type="text" id="firstName" v-model="formData.firstname" />
             </div>
             <div class="mb-3">
-                <label class="form-label" for="lastName">Last name:</label>
-                <input class="form-control" type="text" id="lastName" v-model="formData.lastName" />
+                <label class="form-label" for="lastname">Last name:</label>
+                <input class="form-control" type="text" id="lastName" v-model="formData.lastname" />
             </div>
             <div class="mb-3">
                 <label class="form-label" for="userName">Username:</label>
@@ -28,6 +28,14 @@
             <div class="mb-3">
                 <label class="form-label" for="storeName">Store name:</label>
                 <input class="form-control" type="text" id="storeName" v-model="formData.storeName" />
+            </div>
+             <div class="mb-3">
+                <label class="form-label" for="address">Address:</label>
+                <input class="form-control" type="text" id="address" v-model="formData.address" />
+            </div>
+             <div class="mb-3">
+                <label class="form-label" for="email">Email:</label>
+                <input class="form-control" type="text" id="email" v-model="formData.email" />
             </div>
             <button class="btn btn-primary">Register</button>
         </div>

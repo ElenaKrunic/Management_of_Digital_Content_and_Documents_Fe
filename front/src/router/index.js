@@ -10,6 +10,7 @@ import Indexing from '../views/index/Indexing.vue'
 import Login from '../views/login/Login.vue'
 import RegisterBuyer from '../views/register/RegisterBuyer.vue'
 import RegisterSeller from '../views/register/RegisterSeller.vue'
+import  Logout from '../views/logout/Logout.vue'
 
 Vue.use(VueRouter)
 
@@ -58,7 +59,12 @@ const routes = [
     path: '/registerSeller',
     name: 'RegisterSeller',
     component: RegisterSeller
-  }
+  },
+  {
+    name: 'Logout',
+    path: '/logout',
+    component: Logout
+},
 ]
 
 
@@ -69,6 +75,7 @@ const router = new VueRouter({
   routes
 })
 
+/*
 router.beforeEach((to, from, next) => {
 
   const token = localStorage.getItem('token')
@@ -78,5 +85,5 @@ router.beforeEach((to, from, next) => {
   //else if((to.name === 'Login' || to.name === 'Register') && token) next ({name: 'SearchSimpleQuery'})
   else next();
 })
-
+*/
 export default router
