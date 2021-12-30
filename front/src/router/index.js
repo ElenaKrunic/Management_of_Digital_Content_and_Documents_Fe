@@ -11,6 +11,10 @@ import Login from '../views/login/Login.vue'
 import RegisterBuyer from '../views/register/RegisterBuyer.vue'
 import RegisterSeller from '../views/register/RegisterSeller.vue'
 import  Logout from '../views/logout/Logout.vue'
+import  AddArticle from '../views/article/AddArticle.vue'
+import  Store from '../views/store/Store.vue'
+import  ArticleDetails from '../views/article/ArticleDetails.vue'
+import  UpdateArticle from '../views/article/UpdateArticle.vue'
 
 Vue.use(VueRouter)
 
@@ -64,6 +68,26 @@ const routes = [
     name: 'Logout',
     path: '/logout',
     component: Logout
+},
+{
+  name: 'AddArticle',
+  path: '/addArticle',
+  component: AddArticle
+},
+{
+  name: 'Store',
+  path: '/store',
+  component: Store
+},
+{
+  name: 'ArticleDetails',
+  path: '/articleDetails',
+  component: ArticleDetails
+},
+{
+  name: 'UpdateArticle',
+  path: '/updateArticle',
+  component: UpdateArticle
 },
 ]
 

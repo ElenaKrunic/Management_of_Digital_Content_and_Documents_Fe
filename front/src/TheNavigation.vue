@@ -23,7 +23,21 @@
             <a href="/searchSimpleQuery" class="nav-link"> Search Simple Query</a>
         </li>
         <li v-if="seller != '' && tokenn" id="a" class="navbar-nav">
+            <a href="/addArticle" class="nav-link"> Add article</a>
+        </li>
+        <li v-if="seller != '' && tokenn" id="a" class="navbar-nav">
             <a href="/indexing" class="nav-link">Indexing</a>
+        </li>
+        <!--
+          <li v-if="tokenn" id="a" class="navbar-nav">
+            <a href="/store" class="nav-link">Store</a>
+        </li>
+         -->
+         <li v-if="tokenn" id="a" class="navbar-nav">
+            <a href="/articleDetails" class="nav-link">Article details</a>
+        </li>
+         <li v-if="tokenn" id="a" class="navbar-nav">
+            <a href="/updateArticle" class="nav-link">UpdateArticle</a>
         </li>
       </ul>
     </div>
