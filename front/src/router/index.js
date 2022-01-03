@@ -10,11 +10,12 @@ import Indexing from '../views/index/Indexing.vue'
 import Login from '../views/login/Login.vue'
 import RegisterBuyer from '../views/register/RegisterBuyer.vue'
 import RegisterSeller from '../views/register/RegisterSeller.vue'
-import  Logout from '../views/logout/Logout.vue'
-import  AddArticle from '../views/article/AddArticle.vue'
-import  Store from '../views/store/Store.vue'
-import  ArticleDetails from '../views/article/ArticleDetails.vue'
-import  UpdateArticle from '../views/article/UpdateArticle.vue'
+import Logout from '../views/logout/Logout.vue'
+import AddArticle from '../views/article/AddArticle.vue'
+import Store from '../views/store/Store.vue'
+import ArticleDetails from '../views/article/ArticleDetails.vue'
+import UpdateArticle from '../views/article/UpdateArticle.vue'
+import ArticleItem from '../views/article/ArticleItem.vue'
 
 Vue.use(VueRouter)
 
@@ -81,13 +82,18 @@ const routes = [
 },
 {
   name: 'ArticleDetails',
-  path: '/articleDetails',
+  path: '/articleDetails/:id',
   component: ArticleDetails
 },
 {
   name: 'UpdateArticle',
-  path: '/updateArticle',
+  path: '/updateArticle/:id',
   component: UpdateArticle
+},
+{
+  name: 'ArticleItem',
+  path: '/articleItem',
+  component: ArticleItem
 },
 ]
 

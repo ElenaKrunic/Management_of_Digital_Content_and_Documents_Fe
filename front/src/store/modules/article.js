@@ -59,7 +59,7 @@ const getters = {
         return state.articleList;
     },
     isArticleLoading: (state) => {
-        alert('ucitava se ')
+        //alert('ucitava se ')
         return state.isLoading;
     }
 }

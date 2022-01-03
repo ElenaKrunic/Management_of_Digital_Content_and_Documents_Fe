@@ -8,14 +8,16 @@
             <template v-slot:default>
               <thead>
                 <tr>
-                  <th class="text-left">Name</th>
-                  <th class="text-left">Description</th>
+                  <th class="text-left"> Name </th>
+                  <th class="text-left"> Description </th>
+                  <th class="text-left"> Price </th>
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="article in search" :key="article.name">
+                <tr v-for="article in search" :key="article.id">
                   <td>{{ article.name }}</td>
                   <td>{{ article.description }}</td>
+                  <td>{{ article.price }}</td>
                 </tr>
               </tbody>
             </template>

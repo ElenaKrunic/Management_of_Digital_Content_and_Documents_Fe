@@ -4,8 +4,6 @@
               <div class="img-event intrinsic">
                   <!--
                 <img :src="article.path" alt="" class="grow thumbnail-image card-img-top intrinsic-item p-3">
-
-
                    -->
             </div>
              <div class="mb-3">
@@ -45,22 +43,21 @@ export default {
         }
     },
     created() {
-        this.getOneArticle(1);
+        this.getOneArticle(this.id);
     },
     methods: {
         getOneArticle() {
-            axios.get('api/articles/article/1')
+            axios.get('api/articles/article/' + this.id)
             .then((response) => {
-                 this.article = response.data;
-                 console.log(this.article)
-                 alert(this.article)
+                this.article = response.data;
+                console.log(this.article)
             }).catch((error => {
                 console.log(error)
             })) 
         },
 
         updateArticle() {
-            axios.put('api/articles/updateArticle/1', this.article) 
+            axios.put('api/articles/updateArticle/' + this.id, this.article) 
             .then((response) => {
                 console.log(response)
                 this.$router.push('/store');
@@ -71,10 +68,9 @@ export default {
         },
 
         deleteArticle() {
-            axios.delete('api/articles/deleteArticle/1')
+            axios.delete('api/articles/deleteArticle/' + this.id)
             .then((response) => {
                 console.log(response)
-                alert('deleted')
                 window.location.href = '/store';
             }).catch(error => {
                 console.log(error)

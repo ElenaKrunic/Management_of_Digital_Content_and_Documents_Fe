@@ -6,7 +6,6 @@
         <div class="col-12 col-md-4 offset-md-4">
           <div class="intrinsic">
             <img class="img-fluid intrinsic-item" :src="article.path" alt="">
-             <h4> {{ article.path }}</h4>
           </div>
         </div>
       </div>
@@ -60,11 +59,9 @@ export default {
     methods:{
         getArticle(){
             axios
-            .get('api/articles/article/1')
+            .get('api/articles/article/' + this.id)
             .then((response) => {
                 this.article = response.data
-                console.log(this.article.path)
-                //console.log(JSON.stringify(this.myrecord[0].id))
             })
             .catch((error) => {
                 console.log(error)

@@ -1,9 +1,11 @@
 <template>
-<div class="container" :class="{loadingItem: isArticleLoading}">
-  <div class="row text-center" v-if="isArticleLoading">
-    <grid-loader :loading="isArticleLoading" :color="loaderColor" :size="loaderSize"></grid-loader>
-  </div>
-  <div v-else class="row action-panel">
+<div class="container pull-right"> 
+  <div class="row action-panel">
+      <button v-on:click="indexingArticles()" class="btn btn-outline-dark"> Index all articles from store </button>
+      <p></p>    
+  </div>  
+
+  <div class="row action-panel">
     <div class="col-12">
       <div class="btn-group btn-group-sm pull-right">
 				<button id="list" class="btn btn-outline-dark" @click.prevent="changeDisplay(true)">
@@ -16,18 +18,16 @@
     </div>
   </div>
 
-<div class="row" v-if="!isArticleLoading">
-<app-article-item v-for="art in articles" :item="art" :key="art.id" :displayList="displayList"></app-article-item>
-</div>
+  <div class="row" >
+    <appArticleItem v-for="art in articles" :item="art" :key="art.id" :displayList="displayList"></appArticleItem>
+  </div>
 
 </div>
 </template>
 
 <script> 
 import axios from '../../../axiosConfig'
-import { mapGetters } from 'vuex'
-import GridLoader from 'vue-spinner/src/GridLoader.vue'
-import ArticleItem from '../article/ArticleDetails.vue'
+import ArticleItem from '../article/ArticleItem.vue'
 
 export default {
     props : ['article'],
@@ -36,34 +36,45 @@ export default {
         loaderColor: "#5cb85c",
         loaderSize: "50px",
         displayList: false,
-        articles: []
+        articles: [],
+        indexes : []
         } 
     },
     created() {
         this.getAllArticles()
     },
     computed: {
-        ...mapGetters(['isArticleLoading'])
+     // ...mapGetters(['isArticleLoading'])
     },
     components: {
         appArticleItem: ArticleItem,
-        GridLoader
+        //GridLoader
     },
     methods: {
         getAllArticles() {
             axios.get('/api/articles/all')
             .then((response) => {
                 this.articles = response.data
+                console.log(response)
             })
             .catch((error) => {
                 console.log(error)
             })
         },
         changeDisplay(isList) {
-            this.display = isList;
+            this.displayList = isList;
+        },
+        indexingArticles() {
+           axios.get('/api/index/reindexArticles/seller/' + 1)
+            .then((response) => {
+                this.indexes = response.data
+                alert('Products indexed!')
+                }).catch((error) => {
+                console.log(error)
+                this.errorMessage = 'Erorr indexing articles'
+            })
         }
     }
-
 }
 </script>
 
