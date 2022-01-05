@@ -37,6 +37,14 @@
          <li v-if="tokenn" id="a" class="navbar-nav">
             <a href="/result" class="nav-link"> Result </a>
         </li>
+        <li v-if="buyer != '' && tokenn" id="a" class="navbar-nav">
+            <a href="/myErrands" class="nav-link">My errands</a>
+        </li>
+        <li>
+          <router-link to="/cart" class="btn btn-success navbar-btn" tag="button">
+            Checkout <span class="badge badge-light">{{ numItems }} ($ {{ cartValue }})</span>
+          </router-link>
+        </li>
       </ul>
     </div>
   </div>
@@ -44,6 +52,7 @@
 </template>
 
 <script>
+import {mapGetters} from 'vuex'
 export default {
   name:'TheNavigation',
   created(){
@@ -57,6 +66,15 @@ export default {
       tokenn: localStorage.getItem('token'),
       buyer:'',
       seller:''
+    }
+  },
+  computed : {
+    ...mapGetters(['cartValue', 'cartItemList']),
+    numItems() {
+       return this.cartItemList.reduce((total, item) => {
+        total += item.quantity;
+        return total
+      }, 0);
     }
   },
   methods:{

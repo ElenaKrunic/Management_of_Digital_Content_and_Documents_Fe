@@ -1,9 +1,6 @@
 const state = {
     cartItemList : [
-
-    ]
-    /*
-    cartItemList : [
+        /*
         {
             id: 1,
             title: 'macbook Retina 13.3" ME662 (2013)',
@@ -33,8 +30,8 @@ const state = {
             quantity: 20,
             description: "2.9 Ghz Dual-Core Intel Core i5 Broadwell Tubro boost up to 3.3 GHz with L3 3MB cache"
         }
-    ],
-    */
+        */
+    ]
 }
 
 const mutations = {

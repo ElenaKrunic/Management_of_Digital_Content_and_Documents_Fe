@@ -4,6 +4,7 @@ import Vuex from 'vuex'
 import article from './modules/article';
 import cart from './modules/cart';
 import user from './modules/user';
+import messages from './modules/messages'
 import * as actions from './actions'
 
 Vue.use(Vuex)
@@ -15,6 +16,7 @@ export default new Vuex.Store({
     modules: {
         article,
         cart,
-        user
+        user,
+        messages
     }
 })

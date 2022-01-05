@@ -11,3 +11,8 @@ export const updateCart = ({
         commit('ADD_MESSAGE', message_obj);
     }
 }
+
+export const removeItemInCart = ({commit}, {item}) => {
+	commit('REMOVE_CART_ITEM', {item});
+}
+

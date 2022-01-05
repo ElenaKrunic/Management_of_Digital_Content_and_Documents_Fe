@@ -16,6 +16,10 @@ import Store from '../views/store/Store.vue'
 import ArticleDetails from '../views/article/ArticleDetails.vue'
 import UpdateArticle from '../views/article/UpdateArticle.vue'
 import ArticleItem from '../views/article/ArticleItem.vue'
+import ShoppingCart from '../views/cart/ShoppingCart.vue'
+import MyErrands from '../views/errand/MyErrands.vue'
+import ErrandDetails from '../views/errand/ErrandDetails.vue'
+import ErrandItem from '../views/errand/ErrandItem.vue'
 
 Vue.use(VueRouter)
 
@@ -94,6 +98,26 @@ const routes = [
   name: 'ArticleItem',
   path: '/articleItem',
   component: ArticleItem
+},
+{
+  name: 'ShoppingCart',
+  path: '/cart',
+  component: ShoppingCart
+},
+{
+  name: 'MyErrands',
+  path: '/myErrands',
+  component: MyErrands
+},
+{
+  name: 'ErrandItem',
+  path: '/errandItem',
+  component: ErrandItem
+},
+{
+  name: 'ErrandDetails',
+  path: '/errandDetails/:id',
+  component: ErrandDetails
 },
 ]
 
