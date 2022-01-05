@@ -20,7 +20,7 @@
             <a href="/logout" class="nav-link">Log out</a>
         </li>
         <li v-if="buyer != '' && tokenn" id="a" class="navbar-nav">
-            <a href="/searchSimpleQuery" class="nav-link"> Search Simple Query</a>
+            <a href="/searchSimpleArticleQuery" class="nav-link"> Search simple article query </a>
         </li>
         <li v-if="seller != '' && tokenn" id="a" class="navbar-nav">
             <a href="/addArticle" class="nav-link"> Add article</a>
@@ -35,10 +35,13 @@
             <a href="/updateArticle" class="nav-link">UpdateArticle</a>
         </li>
          <li v-if="tokenn" id="a" class="navbar-nav">
-            <a href="/result" class="nav-link"> Result </a>
+            <a href="/articleResult" class="nav-link"> Article result </a>
         </li>
         <li v-if="buyer != '' && tokenn" id="a" class="navbar-nav">
             <a href="/myErrands" class="nav-link">My errands</a>
+        </li>
+        <li v-if="buyer != '' && tokenn" id="a" class="navbar-nav">
+            <a href="/searchSimpleErrandQuery" class="nav-link">Search simple errand query</a>
         </li>
         <li>
           <router-link to="/cart" class="btn btn-success navbar-btn" tag="button">

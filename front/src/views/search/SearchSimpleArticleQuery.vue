@@ -37,7 +37,7 @@ import axios from '../../../axiosConfig'
 import { mapMutations } from "vuex";
 
 export default {
-    name: 'SearchSimpleQuery',
+    name: 'SearchSimpleArticleQuery',
     data() {
         return {
             articles:[], 
@@ -57,7 +57,7 @@ export default {
             .then((response) => {
                 this.articles = response.data
                 this.setSearch(response.data)
-                this.$router.push("/result");
+                this.$router.push("/articleResult");
                 console.log(JSON.stringify(this.articles) + ' articles')
             })
             .catch((error) => {

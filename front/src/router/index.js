@@ -2,11 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 
-import Search from '../views/search/Search.vue'
-import Index from '../views/search/Index.vue'
-import Result from '../views/search/Result.vue'
-import SearchSimpleQuery from '../views/search/SearchSimpleQuery.vue'
-import Indexing from '../views/index/Indexing.vue'
+import ArticleResult from '../views/search/ArticleResult.vue'
+import SearchSimpleArticleQuery from '../views/search/SearchSimpleArticleQuery.vue'
 import Login from '../views/login/Login.vue'
 import RegisterBuyer from '../views/register/RegisterBuyer.vue'
 import RegisterSeller from '../views/register/RegisterSeller.vue'
@@ -20,6 +17,8 @@ import ShoppingCart from '../views/cart/ShoppingCart.vue'
 import MyErrands from '../views/errand/MyErrands.vue'
 import ErrandDetails from '../views/errand/ErrandDetails.vue'
 import ErrandItem from '../views/errand/ErrandItem.vue'
+import SearchSimpleErrandQuery from '../views/search/SearchSimpleErrandQuery'
+import ErrandResult from '../views/search/ErrandResult.vue'
 
 Vue.use(VueRouter)
 
@@ -30,29 +29,14 @@ const routes = [
     component: Home
   },
   {
-    path: '/search',
-    name: 'Search',
-    component: Search
+    path: '/articleResult',
+    name: 'ArticleResult',
+    component: ArticleResult
   },
   {
-    path: '/index',
-    name: 'Index',
-    component: Index
-  },
-  {
-    path: '/result',
-    name: 'Result',
-    component: Result
-  },
-  {
-    path: '/searchSimpleQuery',
-    name: 'SearchSimpleQuery',
-    component: SearchSimpleQuery
-  },
-  {
-    path: '/indexing',
-    name: 'Indexing',
-    component: Indexing
+    path: '/SearchSimpleArticleQuery',
+    name: 'SearchSimpleArticleQuery',
+    component: SearchSimpleArticleQuery
   },
   {
     path: '/login',
@@ -118,6 +102,16 @@ const routes = [
   name: 'ErrandDetails',
   path: '/errandDetails/:id',
   component: ErrandDetails
+},
+{
+  name: 'SearchSimpleErrandQuery',
+  path: '/searchSimpleErrandQuery',
+  component: SearchSimpleErrandQuery
+},
+{
+  name: 'ErrandResult',
+  path: '/errandResult',
+  component: ErrandResult
 },
 ]
 

@@ -1,5 +1,11 @@
 <template>
-<div class="container pull-right"> 
+<div class="container pull-right">
+
+    <div class="row action-panel">
+        <button v-on:click="indexingErrands()" class="btn btn-outline-dark"> Index all errands for search </button>
+        <p></p>    
+    </div>  
+
    <div class="row" >
     <appErrandItem v-for="err in errands" :item="err" :key="err.id" :displayList="displayList"></appErrandItem>
   </div>
@@ -29,7 +35,7 @@ export default {
     },
 
     methods: {
-                  getMyErrands() {
+            getMyErrands() {
                 axios.get('api/errands/myErrands')
                 .then((response) => {
                     this.errands = response.data
@@ -39,6 +45,16 @@ export default {
                     alert('nije ok')
                     console.log(error)
                     this.errorMsg = 'greska tokom ucitavanja erands '
+                })
+            },
+
+            indexingErrands() {
+                axios.get('/api/reindexErrands/buyer/' + 2)
+                .then((response) => {
+                    this.indexes = response.data
+                    alert("Errands indexed! ")
+                }).catch((error) => {
+                    console.log(error)
                 })
             }
         }
