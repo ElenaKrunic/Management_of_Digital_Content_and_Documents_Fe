@@ -43,6 +43,9 @@
         <li v-if="buyer != '' && tokenn" id="a" class="navbar-nav">
             <a href="/searchSimpleErrandQuery" class="nav-link">Search simple errand query</a>
         </li>
+          <li v-if="buyer != '' && tokenn" id="a" class="navbar-nav">
+            <a href="/searchRangeArticleQuery" class="nav-link">Search range article query</a>
+        </li>
         <li>
           <router-link to="/cart" class="btn btn-success navbar-btn" tag="button">
             Checkout <span class="badge badge-light">{{ numItems }} ($ {{ cartValue }})</span>
