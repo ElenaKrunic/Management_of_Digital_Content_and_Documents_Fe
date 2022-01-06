@@ -7,7 +7,7 @@
 
       <div class="caption-full">
         <p> {{errand.orderedAtDate}} </p>
-        <p> {{errand.isDelivered}} </p>
+        <p> {{errand.delivered}} </p>
         <p> {{errand.grade }} </p>
         <p> {{errand.comment }} </p>
         <p> {{errand.anonymousComment }} </p>

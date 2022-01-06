@@ -20,6 +20,8 @@ import ErrandItem from '../views/errand/ErrandItem.vue'
 import SearchSimpleErrandQuery from '../views/search/SearchSimpleErrandQuery'
 import ErrandResult from '../views/search/ErrandResult.vue'
 import SearchRangeArticleQuery from '../views/search/SearchRangeArticleQuery.vue'
+import SearchRangeErrandQuery from '../views/search/SearchRangeErrandQuery.vue'
+
 
 
 Vue.use(VueRouter)
@@ -119,6 +121,11 @@ const routes = [
   name: 'SearchRangeArticleQuery',
   path: '/searchRangeArticleQuery',
   component: SearchRangeArticleQuery
+},
+{
+  name: 'SearchRangeErrandQuery',
+  path: '/searchRangeErrandQuery',
+  component: SearchRangeErrandQuery
 },
 ]
 
