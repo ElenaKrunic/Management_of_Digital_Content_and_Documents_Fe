@@ -21,8 +21,8 @@ import SearchSimpleErrandQuery from '../views/search/SearchSimpleErrandQuery'
 import ErrandResult from '../views/search/ErrandResult.vue'
 import SearchRangeArticleQuery from '../views/search/SearchRangeArticleQuery.vue'
 import SearchRangeErrandQuery from '../views/search/SearchRangeErrandQuery.vue'
-
-
+import ChangeBuyer from '../views/changeUserData/ChangeBuyer.vue'
+import ChangeSeller from '../views/changeUserData/ChangeSeller.vue'
 
 Vue.use(VueRouter)
 
@@ -126,6 +126,16 @@ const routes = [
   name: 'SearchRangeErrandQuery',
   path: '/searchRangeErrandQuery',
   component: SearchRangeErrandQuery
+},
+{
+  name: 'ChangeBuyer',
+  path: '/changeBuyer',
+  component: ChangeBuyer
+},
+{
+  name: 'ChangeSeller',
+  path: '/changeSeller',
+  component: ChangeSeller
 },
 ]
 

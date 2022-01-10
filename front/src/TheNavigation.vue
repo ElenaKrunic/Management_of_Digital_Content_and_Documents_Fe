@@ -46,8 +46,14 @@
         <li v-if="buyer != '' && tokenn" id="a" class="navbar-nav">
             <a href="/searchRangeArticleQuery" class="nav-link">Search range article query</a>
         </li>
-           <li v-if="buyer != '' && tokenn" id="a" class="navbar-nav">
+        <li v-if="buyer != '' && tokenn" id="a" class="navbar-nav">
             <a href="/searchRangeErrandQuery" class="nav-link">Search range errand query</a>
+        </li>
+         <li v-if="buyer != '' && tokenn" id="a" class="navbar-nav">
+            <a href="/changeBuyer" class="nav-link">Change buyer data</a>
+        </li>
+         <li v-if="seller != '' && tokenn" id="a" class="navbar-nav">
+            <a href="/changeSeller" class="nav-link">Change seller data</a>
         </li>
         <li>
           <router-link to="/cart" class="btn btn-success navbar-btn" tag="button">
