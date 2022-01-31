@@ -55,6 +55,9 @@
          <li v-if="seller != '' && tokenn" id="a" class="navbar-nav">
             <a href="/changeSeller" class="nav-link">Change seller data</a>
         </li>
+        <li v-if="tokenn" id="a" class="navbar-nav">
+            <a href="/indexArticle" class="nav-link">Index article</a>
+        </li>
         <li>
           <router-link to="/cart" class="btn btn-success navbar-btn" tag="button">
             Checkout <span class="badge badge-light">{{ numItems }} ($ {{ cartValue }})</span>

@@ -26,11 +26,6 @@
           </td>
         </tr>
         <tr>
-          <td>
-            <button class="btn btn-warning" @click="saveShoppingCartLocal">
-              <i class="fa fa-angle-left"></i> Save and Continue Shopping
-            </button>
-          </td>
           <td colspan="2" class="d-none d-sm-table-cell"></td>
           <td class="d-none d-sm-table-cell text-center">
             <strong>Total ${{ cartValue }}</strong>

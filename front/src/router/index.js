@@ -23,6 +23,7 @@ import SearchRangeArticleQuery from '../views/search/SearchRangeArticleQuery.vue
 import SearchRangeErrandQuery from '../views/search/SearchRangeErrandQuery.vue'
 import ChangeBuyer from '../views/changeUserData/ChangeBuyer.vue'
 import ChangeSeller from '../views/changeUserData/ChangeSeller.vue'
+import IndexArticle from '../views/index/IndexArticle.vue'
 
 Vue.use(VueRouter)
 
@@ -137,9 +138,12 @@ const routes = [
   path: '/changeSeller',
   component: ChangeSeller
 },
+{
+  name: 'IndexArticle',
+  path: '/indexArticle',
+  component: IndexArticle
+},
 ]
-
-
 
 const router = new VueRouter({
   mode: 'history',

@@ -65,7 +65,7 @@ export default {
             this.displayList = isList;
         },
         indexingArticles() {
-           axios.get('/api/index/reindexArticles/seller/' + 1)
+           axios.get('/api/index/reindexArticlesElena/seller/' + 1)
             .then((response) => {
                 this.indexes = response.data
                 alert('Products indexed!')

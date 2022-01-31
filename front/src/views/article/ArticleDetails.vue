@@ -17,24 +17,17 @@
       </div>
       <div class="ratings">
         <p class="pull-right">
-          <!--           <button @click="addArticle" class="btn btn-success">Add to cart</button>
- -->
-        </p>
           <router-link :to="'/updateArticle/' + article.id" tag="h5" class="card-title"><a> Update article </a></router-link>
-        <div class="clearfix"></div>
+          <!-- 
+             <button v-on:click="generatePDF()" class="btn btn-outline-dark"> Generate PDF </button>
+          -->
+          <v-btn @click="generatePDF" class="btn btn-outline-dark"> Preuzmi PDF </v-btn>
+
+        </p>
       </div>
     </div>
   </div>
 </div>
-<!-- ovako se ucitava 
-
-<div style="width: 50%; background:white; padding: 5%; border-radius:2%;">        
-        <div class="mb-3">
-            <label class="form-label" for="name">name:</label>
-            <h4>{{article.name}}</h4>
-        </div>
-    </div>
- -->
     
 </template>
 
@@ -47,7 +40,9 @@ export default {
     },
     data(){
         return {
-            article: {},
+            article: {
+              path : ""
+            },
             errorMsg: '',
             loaderColor: "#5cb85c",
             loaderSize: "50px",
@@ -61,11 +56,37 @@ export default {
             axios
             .get('api/articles/article/' + this.id)
             .then((response) => {
+              
+                //ovo ispise sadrzaj u konzolu
                 this.article = response.data
             })
             .catch((error) => {
                 console.log(error)
                 this.errorMsg = 'Error retriving data'
+            })
+        },
+        generatePDF() { 
+          axios
+            .get('api/articles/pdf/' + this.id, { responseType: 'blob'})
+            .then((response) => {
+              //alert('ok');
+              console.log(response);
+              this.article = response.data;
+              const url = window.URL.createObjectURL(new Blob([response.data]));
+              console.log('>>> ovo je url >>>' + url)
+              const link = document.createElement("a");
+              console.log('>>> ovo je link >>>' + link);
+              console.log('>>> link.href >>>' + link.href);
+              link.href = url;
+              link.setAttribute("download", "article.pdf");
+              document.body.appendChild(link);
+              link.click();
+              link.parentNode.removeChild(link);
+            })
+            .catch((error) => {
+              alert('nije ok')
+              console.log(error)
+              this.errorMsg = 'Error retriving data'
             })
         }
     }
