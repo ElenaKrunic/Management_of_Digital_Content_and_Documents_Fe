@@ -62,8 +62,11 @@ export default {
   },
   props: ['article'],
   data(){ 
-    return { 
-      id: this.$route.params.id,
+    return {
+      cartItem: {
+        id: localStorage.getItem('articleId'),
+        quantity: localStorage.getItem('quantityAdded')
+      },      
       articles : []
     }
   },
@@ -74,6 +77,18 @@ export default {
       'saveToTransaction',
       'clearCart',
     ]),
+    checkoutElena() {
+      //http://localhost:8085/api/articles/orderArticle/?id=1&quantity=20
+          axios.post('api/articles/orderArticle/?id=' + this.cartItem.id + "&quantity=" + this.cartItem.quantity)
+          .then((response) => {
+            this.articles = response.data
+            console.log(response)
+            alert("Uspjesno ste izvrsiti naruzbu!")
+          })
+          .catch((error) => {
+            console.log(error)
+          })
+    },
     checkValidCart(itemList, prodList) {
       let isValid = true
       let message = ''
@@ -93,37 +108,6 @@ export default {
       return {
         isValid,
         message,
-      }
-    },
-    saveShoppingCartLocal() {
-      if (this.isLoggedIn) {
-        let { isValid, message } = this.checkValidCart(
-          this.cartItemList,
-          this.products
-        )
-
-        if (isValid) {
-          this.saveShoppingCart({
-            cartItemList: this.cartItemList,
-            uid: this.currentUser.uid,
-          }).then(() => {
-            this.addMessage({
-              messageClass: 'success',
-              message: 'Your shopping cart is saved successfully',
-            })
-            this.$router.push('/')
-          })
-        } else {
-          this.addMessage({
-            messageClass: 'danger',
-            message: message,
-          })
-        }
-      } else {
-        this.addMessage({
-          messageClass: 'warning',
-          message: 'Please login to save your cart',
-        })
       }
     },
     checkout() {
@@ -168,17 +152,6 @@ export default {
           message: 'Please login to checkout',
         })
       }
-    },
-    
-    checkoutElena() {
-          axios.get('api/articles/' + this.id)
-          .then((response) => {
-            this.articles = response.data
-            console.log(response)
-          })
-          .catch((error) => {
-            console.log(error)
-          })
     },
   },
 }

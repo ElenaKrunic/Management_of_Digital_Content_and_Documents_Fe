@@ -9,6 +9,7 @@
 					<h4 class="nomargin">{{ cartItem.title }}</h4>
 					<p>{{ cartItem.description }}</p>
 				</div>
+				<p hidden> {{ cartItem.id }}</p>
 			</div>
 		</td>
 		<td data-th="Price">{{ cartItem.price }}</td>
@@ -47,9 +48,16 @@
 				this.updateCart({
 					item: vm.cartItem,
 					quantity: parseInt(event.target.value),
-					isAdd: false
+					isAdd: false,
+					//localStorage.setItem('quantity',)
 				});
-			}
+			},
+			setQuantity(event) {
+				let quantity = parseInt(event.target.value);
+				let quantityToSend = this.quantity;
+				alert(quantityToSend);
+				console.log(quantity);
+			},
 		}
 	}
 </script>

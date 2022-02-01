@@ -52,7 +52,8 @@ export default {
       const order = {
         item: Object.assign({}, this.item),
         quantity : 1,
-        isAdd: true
+        isAdd: true,
+        id : localStorage.setItem("articleId", this.item.id)
       };
       this.updateCart(order);
     }
