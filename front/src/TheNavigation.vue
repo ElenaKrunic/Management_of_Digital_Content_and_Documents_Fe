@@ -58,6 +58,10 @@
         <li v-if="tokenn" id="a" class="navbar-nav">
             <a href="/indexArticle" class="nav-link">Index article</a>
         </li>
+         <li v-if="tokenn" id="a" class="navbar-nav">
+            <a href="/allUsers" class="nav-link">All users</a>
+        </li>
+        
         <li>
           <router-link to="/cart" class="btn btn-success navbar-btn" tag="button">
             Checkout <span class="badge badge-light">{{ numItems }} ($ {{ cartValue }})</span>

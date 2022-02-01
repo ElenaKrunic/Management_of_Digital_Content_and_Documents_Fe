@@ -21,9 +21,12 @@ import SearchSimpleErrandQuery from '../views/search/SearchSimpleErrandQuery'
 import ErrandResult from '../views/search/ErrandResult.vue'
 import SearchRangeArticleQuery from '../views/search/SearchRangeArticleQuery.vue'
 import SearchRangeErrandQuery from '../views/search/SearchRangeErrandQuery.vue'
-import ChangeBuyer from '../views/changeUserData/ChangeBuyer.vue'
-import ChangeSeller from '../views/changeUserData/ChangeSeller.vue'
+import ChangeBuyer from '../views/user/ChangeBuyer.vue'
+import ChangeSeller from '../views/user/ChangeSeller.vue'
 import IndexArticle from '../views/index/IndexArticle.vue'
+import User from '../views/user/User.vue'
+import AllUsers from '../views/user/AllUsers.vue'
+import UserDetails from '../views/user/UserDetails.vue'
 
 Vue.use(VueRouter)
 
@@ -142,6 +145,21 @@ const routes = [
   name: 'IndexArticle',
   path: '/indexArticle',
   component: IndexArticle
+},
+{
+  name: 'User',
+  path: '/user',
+  component: User
+},
+{
+  name: 'AllUsers',
+  path: '/allUsers',
+  component: AllUsers
+},
+{
+  name: 'UserDetails',
+  path: '/userDetails/:id',
+  component: UserDetails
 },
 ]
 
