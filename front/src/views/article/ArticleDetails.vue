@@ -17,18 +17,39 @@
       </div>
       <div class="ratings">
         <p class="pull-right">
-          <router-link :to="'/updateArticle/' + article.id" tag="h5" class="card-title"><a> Update article </a></router-link>
-          <!-- 
-             <button v-on:click="generatePDF()" class="btn btn-outline-dark"> Generate PDF </button>
-          -->
-          <v-btn @click="generatePDF" class="btn btn-outline-dark"> Preuzmi PDF </v-btn>
-
+          <router-link :to="'/updateArticle/' + article.id" tag="h5" class="card-title"><a> Измијени производ </a></router-link>
+          <v-btn @click="generatePDF" class="btn btn-outline-dark"> Преузми PDF документ </v-btn>
         </p>
       </div>
     </div>
   </div>
+  <v-row>
+    <v-col align="center" justify="center">
+      <v-card dark style="width: 40%; margin-top: 2.5%">
+        <v-card-title justify="center">
+          <v-col>
+            <h3> Пронађи и индексирај фајл </h3>
+          </v-col>
+        </v-card-title>
+        <form>
+         
+          <v-file-input
+            v-model="form.file"
+            accept=".pdf"
+            name="file"
+            label="Изабери документ са фајл система"
+            style="width: 65.5%; margin-left: -5%"
+          ></v-file-input>
+
+          <br />
+          <v-btn class="mr-4" @click="submit"> Потврди </v-btn>
+          <br />
+          <br />
+        </form>
+      </v-card>
+    </v-col>
+  </v-row>
 </div>
-    
 </template>
 
 <script>
@@ -40,6 +61,12 @@ export default {
     },
     data(){
         return {
+        form: {
+          name: "",
+          description: "",
+          firstname: "",
+          file: ""
+        },
             article: {
               path : ""
             },
@@ -82,13 +109,31 @@ export default {
               document.body.appendChild(link);
               link.click();
               link.parentNode.removeChild(link);
+              //this.$router.push('/articleDetails/:' + this.id);
+              this.$router.push('/store');
             })
             .catch((error) => {
               alert('nije ok')
               console.log(error)
               this.errorMsg = 'Error retriving data'
             })
-        }
+        },
+           submit() {
+      let fd = new FormData();
+      fd.append("name", this.form.name);
+      fd.append("description", this.form.description);
+      fd.append("firstname", this.form.firstname);
+      fd.append("file", this.form.file);
+      axios
+        .post("api/index/add", fd)
+        .then((response) => {
+          alert(response.data);
+          this.$router.push("/");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
     }
 }
 </script>

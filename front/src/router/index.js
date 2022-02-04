@@ -27,6 +27,8 @@ import IndexArticle from '../views/index/IndexArticle.vue'
 import User from '../views/user/User.vue'
 import AllUsers from '../views/user/AllUsers.vue'
 import UserDetails from '../views/user/UserDetails.vue'
+import SelectSearchType from '../views/search/SelectSearchType.vue'
+import SearchBoolArticleQuery from '../views/search/SearchBoolArticleQuery.vue'
 
 Vue.use(VueRouter)
 
@@ -160,6 +162,16 @@ const routes = [
   name: 'UserDetails',
   path: '/userDetails/:id',
   component: UserDetails
+},
+{
+  name: 'SelectSearchType',
+  path: '/selectSearchType',
+  component: SelectSearchType
+},
+{
+  name: 'SearchBoolArticleQuery',
+  path: '/searchBoolArticleQuery',
+  component: SearchBoolArticleQuery
 },
 ]
 

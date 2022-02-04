@@ -8,30 +8,7 @@
           </v-col>
         </v-card-title>
         <form>
-          <!-- 
-
-              <v-text-field
-            v-model="form.name"
-            label="Name"
-            name="name"
-            style="width: 60%"
-          ></v-text-field>
-
-          <v-text-field
-            v-model="form.description"
-            label="description"
-            name="description"
-            style="width: 60%"
-          ></v-text-field>
-
-          <v-text-field
-            v-model="form.firstname"
-            label="Firstname"
-            name="firstname"
-            style="width: 60%"
-          ></v-text-field>
-          -->
-      
+         
           <v-file-input
             v-model="form.file"
             accept=".pdf"

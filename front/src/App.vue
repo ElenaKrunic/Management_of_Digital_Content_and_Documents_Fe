@@ -7,11 +7,11 @@
 
 <script>
 import Navigation from '../src/TheNavigation.vue';
-
+//import Login from '../src/views/login/Login.vue'
 export default {
   name: 'App',
   components: {
-    Navigation,
+    Navigation
   }
 }
 </script>

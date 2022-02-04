@@ -7,11 +7,11 @@
     </div>
      <div class="mb-3">
         <label class="form-label" for="path">Grade:</label>                
-        <input  class="form-control" id="path" v-model="errand.grade" />
+        <input required  class="form-control" id="path" v-model="errand.grade" />
     </div>
      <div class="mb-3">
         <label class="form-label" for="path">Comment:</label>                
-        <input  class="form-control" id="path" v-model="errand.comment" />
+        <input required class="form-control" id="path" v-model="errand.comment" />
     </div>
 
 

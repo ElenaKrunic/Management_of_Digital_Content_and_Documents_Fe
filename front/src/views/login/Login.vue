@@ -2,14 +2,21 @@
     <form @submit.prevent="logIn">
         <div style="width: 50%; background:white; padding: 5%; border-radius:2%;">
             <div class="mb-3" >
-                <label for="username" class="form-label">Username:</label>
+                <label for="username" class="form-label"> Корисничко име</label>
                 <input type="text" class="form-control" id="username" aria-describedby="emailHelp" v-model="formData.username">
             </div>
             <div class="mb-3">
-                <label for="password" class="form-label">Password:</label>
+                <label for="password" class="form-label"> Шифра</label>
                 <input type="password" class="form-control" id="password" v-model="formData.password">
             </div>
-            <button type="submit" class="btn btn-primary">Log In</button>
+            <button type="submit" class="btn btn-primary">Пријави се</button>
+            &nbsp;&nbsp;&nbsp;
+            <br/>
+            <br/>
+            <router-link :to="'/registerBuyer'"><a> Региструј купца </a></router-link>
+            &nbsp;&nbsp;&nbsp;
+            <br/>
+            <router-link :to="'/registerSeller'"><a> Региструј продавца </a></router-link>
         </div>
     </form>
 </template>
@@ -34,7 +41,7 @@ export default {
             .then((response) => {
                 localStorage.setItem('token', response.data)
                 //console.log(response.data + ' token')
-                this.$router.push({ path : '/searchSimpleQuery'})
+                this.$router.push({ path : '/store'})
             })
             .catch((error) => {
                 console.log(error)
