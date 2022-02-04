@@ -1,13 +1,12 @@
 <template>
-<form @submit.prevent="getMyArticlesAdvanced">
+<form @submit.prevent="getMyErrandsAdvanced">
     <div class="container pull-left">
     <div>
         <div style="display: block;">
             <p style="margin-bottom:-0.5px;">Select a field for searching:</p>
             <select @change="setFormDataAdv($event)" class="form-control">
-                <option value="name"> NAME </option>
-                <option value="description"> DESCRIPTION </option>
-                <option value="price"> PRICE </option>
+                <option value="comment"> КОМЕНТАР </option>
+                <option value="grade"> ОЦЈЕНА </option>
             </select>
         </div>
             <div class="mb-3">
@@ -26,9 +25,8 @@
             <div style="display: block;">
                 <p>Select a field for searching:</p>
                 <select @change="setFormDataAdv1($event)" class="form-control">
-                    <option value="name"> NAME </option>
-                    <option value="description"> DESCRIPTION </option>
-                    <option value="price"> PRICE </option>
+                    <option value="comment"> КОМЕНТАР </option>
+                    <option value="grade"> ОЦЈЕНА </option>
                 </select>
             </div>
                 <div class="mb-3">
@@ -50,7 +48,7 @@ export default {
     name: 'SearchSimpleArticleQuery',
     data() {
         return {
-            articles:[], 
+            errands:[], 
             formDataAdvanced:{
                 field1:'',
                 value1:'',
@@ -62,14 +60,13 @@ export default {
     },
     methods: {
         ...mapMutations(['setSearch']),
-        getMyArticlesAdvanced(){
+        getMyErrandsAdvanced(){
             axios
-            .post('api/search/boolean/articles', this.formDataAdvanced)
+            .post('api/search/boolean/errands', this.formDataAdvanced)
             .then((response) => {
-                this.articles = response.data
+                this.errands = response.data 
                 this.setSearch(response.data)
-                console.log(this.articles + ' articles')
-                this.$router.push("/articleResult");
+                this.$router.push('/errandResult')
             })
             .catch((error) => {
                 console.log(error)
@@ -92,7 +89,3 @@ export default {
 }
 
 </script>
-
-<style scoped>
-
-</style>

@@ -13,6 +13,8 @@
 </router-link>&nbsp; <br><br>
 <router-link to="/searchBoolArticleQuery" class="btn btn-success navbar-btn" tag="button"> Претражи производе комбинованом претрагом са више поља <span class="badge badge-light"></span>
 </router-link>&nbsp; <br><br>
+<router-link to="/searchBoolErrandQuery" class="btn btn-success navbar-btn" tag="button"> Претражи поруџбине комбинованом претрагом са више поља <span class="badge badge-light"></span>
+</router-link>&nbsp; <br><br>
 </div>
 </template>
 

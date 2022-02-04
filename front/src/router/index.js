@@ -29,6 +29,7 @@ import AllUsers from '../views/user/AllUsers.vue'
 import UserDetails from '../views/user/UserDetails.vue'
 import SelectSearchType from '../views/search/SelectSearchType.vue'
 import SearchBoolArticleQuery from '../views/search/SearchBoolArticleQuery.vue'
+import SearchBoolErrandQuery from '../views/search/SearchBoolErrandQuery.vue'
 
 Vue.use(VueRouter)
 
@@ -172,6 +173,11 @@ const routes = [
   name: 'SearchBoolArticleQuery',
   path: '/searchBoolArticleQuery',
   component: SearchBoolArticleQuery
+},
+{
+  name: 'SearchBoolErrandQuery',
+  path: '/searchBoolErrandQuery',
+  component: SearchBoolErrandQuery
 },
 ]
 
