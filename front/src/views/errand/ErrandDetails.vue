@@ -1,31 +1,29 @@
 <template>
 <div style="width: 50%; background:white; padding: 5%; border-radius:2%;"> 
-    <h1> Details about delivery </h1>
+    <h1> Details about your order </h1>
     <div class="mb-3">
-        <label class="form-label" for="path">Ordered at date:</label>                
-        <input readonly class="form-control" id="path" v-model="errand.orderedAtDate" />
+        <label class="form-label" for="path"> Ordered at date:</label>                
+        <input readonly class="form-control" id="date" type="text" v-model="errand.orderedAtDate" />
     </div>
      <div class="mb-3">
         <label class="form-label" for="path">Grade:</label>                
         <input required  class="form-control" id="path" v-model="errand.grade" />
     </div>
      <div class="mb-3">
-        <label class="form-label" for="path">Comment:</label>                
+        <label class="form-label" for="path"> Comment:</label>                
         <input required class="form-control" id="path" v-model="errand.comment" />
     </div>
 
-
-<p bold class="mb-3"> postaviti checkboxove za ova tri polja!!</p>
-
     <div class="caption-full">
-    <p> {{errand.delivered}} </p>
-    <p> {{errand.anonymousComment }} </p>
-    <p> {{errand.archivedComment }} </p>
+        <p>Is this errand delivered (T/F)?</p>
+        <input readonly class="form-control" id="path" v-model="errand.delivered" />
+        <p></p>
+        <p>Is there an anonymous comment for this errand (T/F)?</p>
+        <input readonly class="form-control" id="path" v-model="errand.anonymousComment" />
     </div>
-
+    <br />
     <button class="btn btn-primary" @click="putCommentAndGrade"> Save changes </button>
     &nbsp;
-    <input type="button" value="Back" onclick="window.history.back()"  class="btn btn-primary" /> 
 
 </div>
 </template>
@@ -41,7 +39,8 @@ export default {
         return {
             errand: {
                 comment: "",
-                grade:0
+                grade:0,
+                date: ""
             },
             errorMsg: '',
             loaderColor: "#5cb85c",

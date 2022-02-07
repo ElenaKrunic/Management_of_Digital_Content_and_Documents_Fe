@@ -8,15 +8,19 @@
       </div>
 
       <div class="caption-full">
-        <h4 class="pull-right"> {{ user.firstname }}</h4>
-        <h4> {{ user.lastname }}</h4>
-        <p> {{ user.email }} </p>
+        <p style="text-align:center"> {{ user.firstname }}</p>
+        <p style="text-align:center"> {{ user.lastname }}</p>
+        <p style="text-align:center"> {{ user.username }} </p>
+        <p style="text-align:center"> {{ user.address }} </p>
+        <p style="text-align:center"> {{ user.email }} </p>
       </div>
-      <div class="ratings">
-        <p class="pull-right">
-          <v-btn @click="blockUser" class="btn btn-outline-dark"> Block user </v-btn>
-        </p>
+          
+      <div class="ratings" style="text-align:center">
+         <button class="btn btn-success pull-right" @click="blockUser()">
+            Block user
+          </button>
       </div>
+      <br>
     </div>
   </div>
 </div>
@@ -57,7 +61,8 @@ export default {
             put('/api/user/ban/' + this.id).
             then((response) => {
                 this.user = response.data
-                alert('blokiran korisnik')
+                alert('This user is banned from the system!')
+                this.$router.push('/login')
             }).
             catch((error) => {
                 console.log(error)

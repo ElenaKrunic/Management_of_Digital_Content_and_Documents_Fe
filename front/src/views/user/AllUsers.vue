@@ -35,9 +35,9 @@ export default {
                 axios.get('api/user/getUsers')
                 .then((response) => {
                     this.users = response.data
-                    alert('ok')
+                    //alert('ok')
                 }).catch((error) => {
-                    alert('nije ok')
+                    //alert('nije ok')
                     console.log(error)
                 })
             },

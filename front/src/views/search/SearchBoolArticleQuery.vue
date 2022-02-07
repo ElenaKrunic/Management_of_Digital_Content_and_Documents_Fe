@@ -3,41 +3,39 @@
     <div class="container pull-left">
     <div>
         <div style="display: block;">
-            <p style="margin-bottom:-0.5px;">Select a field for searching:</p>
+            <p style="margin-bottom:-0.5px;">Choose a field for search:</p>
             <select @change="setFormDataAdv($event)" class="form-control">
-                <option value="name"> NAME </option>
-                <option value="description"> DESCRIPTION </option>
-                <option value="price"> PRICE </option>
+                <option value="name"> Name </option>
+                <option value="description"> Description </option>
             </select>
         </div>
             <div class="mb-3">
-                <label class="form-label" for="value">Value 1:</label>
+                <label class="form-label" for="value"> First value:</label>
                 <input class="form-control" type="text" id="value" v-model="formDataAdvanced.value1" />
             </div>
         
             <div style="display: block;">
-                <p>Select a boolean operator:</p>
+                <p>Select an operator:</p>
                 <select @change="setOperation($event)" class="form-control">
-                    <option value="AND">AND</option>
-                    <option value="OR">OR</option>
-                    <option value="NOT">NOT</option>
+                    <option value="AND"> and </option>
+                    <option value="OR"> or </option>
+                    <option value="NOT"> not </option>
                 </select>
             </div>
             <div style="display: block;">
-                <p>Select a field for searching:</p>
+                <p> Choose second field for search:</p>
                 <select @change="setFormDataAdv1($event)" class="form-control">
-                    <option value="name"> NAME </option>
-                    <option value="description"> DESCRIPTION </option>
-                    <option value="price"> PRICE </option>
+                    <option value="name"> Name </option>
+                    <option value="description"> Description </option>
                 </select>
             </div>
                 <div class="mb-3">
-                    <label class="form-label" for="value">Value 2:</label>
+                    <label class="form-label" for="value">Second value:</label>
                     <input class="form-control" type="text" id="value" v-model="formDataAdvanced.value2" />
                 </div>
         </div>
         <br>
-        <button class="btn btn-outline-dark">Submit</button>
+        <button class="btn btn-outline-dark"> Search </button>
         </div>
 </form>
 </template>

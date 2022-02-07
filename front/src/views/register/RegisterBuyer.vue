@@ -2,30 +2,30 @@
     <form @submit.prevent="addBuyer">
         <div style="width: 50%; background:white; padding: 5%; border-radius:2%;">
             <div class="mb-3">
-                <label class="form-label" for="firstName">Име:</label>
+                <label class="form-label" for="firstName">First name:</label>
                 <input class="form-control" type="text" id="firstName" v-model="formData.firstName" />
             </div>
             <div class="mb-3">
-                <label class="form-label" for="lastName">Презиме:</label>
+                <label class="form-label" for="lastName">Last name:</label>
                 <input class="form-control" type="text" id="lastName" v-model="formData.lastName" />
             </div>
             <div class="mb-3">
-                <label class="form-label" for="userName">Корисничко име:</label>
+                <label class="form-label" for="userName">Username:</label>
                 <input class="form-control" type="text" id="userName" v-model="formData.username" />
             </div>
             <div class="mb-3">
-                <label class="form-label" for="password">Шифра:</label>
+                <label class="form-label" for="password">Password:</label>
                 <input class="form-control" type="password" id="password" v-model="formData.pass" />
             </div>
             <div class="mb-3">
-                <label class="form-label" for="phone">Број телефона:</label>
+                <label class="form-label" for="phone">Phone number:</label>
                 <input class="form-control" type="text" id="phone" v-model="formData.phone" />
             </div>
             <div class="mb-3">
-                <label class="form-label" for="email">Адреса електронске поште:</label>
+                <label class="form-label" for="email">Email:</label>
                 <input class="form-control" type="text" id="email" v-model="formData.email" />
             </div>
-            <button class="btn btn-primary">Региструј се</button>
+            <button class="btn btn-primary"> Register</button>
         </div>
     </form>
 </template>

@@ -2,7 +2,7 @@
 <div class="mb-3 col-sm-6 col-md-4 item" :class="{'list-group-item': displayList}">
   <div class="thumbnail card">
     <div class="card-body">
-      <router-link :to="'/errandDetails/' + item.id" tag="h5" class="card-title"><a> See details </a></router-link>
+      <router-link :to="'/errandDetails/' + item.id" tag="h5" class="card-title"><a> Look at the details</a></router-link>
       <p class="card-text truncate">{{ item.comment}}</p>
       <div class="row">
         <p class="col-6 lead">${{ item.grade }}</p>

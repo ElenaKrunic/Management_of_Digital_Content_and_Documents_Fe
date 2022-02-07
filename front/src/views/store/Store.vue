@@ -1,7 +1,7 @@
 <template>
 <div class="container pull-right"> 
   <div class="row action-panel">
-      <button v-on:click="indexingArticles()" class="btn btn-outline-dark"> Index all articles from store </button>
+      <button v-on:click="indexingArticles()" class="btn btn-outline-dark"> Index all products from the store </button>
       <p></p>    
   </div>  
 

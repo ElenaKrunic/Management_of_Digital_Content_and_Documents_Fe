@@ -4,30 +4,29 @@
         <div style="display: block">
             <p style="margin-bottom:-0.5px"> Search </p>
             <select @change="setApi($event)"  class="form-control">
-                 <option value="gteRange">Greater then or equals</option>
-                <option value="gtRange"> Greater then</option>
-                <option value="lteRange">Less then or equals</option>
-                <option value="ltRange">Less then</option>
+                 <option value="gteRange"> Greater then or equals</option>
+                <option value="gtRange"> Greater then </option>
+                <option value="lteRange"> Less then or equals</option>
+                <option value="ltRange"> Less then </option>
             </select>
         </div>
 
         <div style="display :block">
-            <p style="margin: bottom -0.5px;"> Select search value
+            <p style="margin: bottom -0.5px;"> Select a field for search
             </p>
             <select @change="setFormData($event)" class="form-control">
-                <option value="price"> GRADE </option>
-                <option value="price"> PRICE </option>
+                <option value="price"> Price </option>
             </select>
         </div>
 
         <div style="display: block;">
         <p style="margin-bottom:-0.5px;"> </p>
         <div class="mb-3">
-              <label class="form-label" for="value">Type search price:</label>
+              <label class="form-label" for="value">Enter some value:</label>
               <input class="form-control" type="text" id="value" v-model="formData.value"/>
         </div>
     </div>
-    <button class="btn btn-outline-dark">Submit</button>
+    <button class="btn btn-outline-dark"> Search </button>
     </div>
 </form>
 </template>

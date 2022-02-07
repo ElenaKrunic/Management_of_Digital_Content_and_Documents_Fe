@@ -6,24 +6,26 @@
                 <img :src="article.path" alt="" class="grow thumbnail-image card-img-top intrinsic-item p-3">
                    -->
             </div>
+            <!--            
              <div class="mb-3">
                 <label class="form-label" for="path">Article path:</label>                
                 <input class="form-control" id="path" v-model="article.path" />
             </div>
+            -->
             <div class="mb-3">
                 <label class="form-label" for="name">Name:</label>                
                 <input class="form-control" type="text" id="name" v-model="article.name" />
             </div>
             <div class="mb-3">
-                <label class="form-label" for="description">Description:</label>
+                <label class="form-label" for="description"> Description:</label>
                  <input class="form-control" type="text" id="description" v-model="article.description" /> 
             </div>
             <div class="mb-3">
-                <label class="form-label" for="price">Price:</label>
+                <label class="form-label" for="price"> Price:</label>
                  <input class="form-control" type="number" id="price" v-model="article.price" /> 
             </div>                  
-            <button class="btn btn-primary"> Save changes </button>
-            <button class="btn btn-danger" @click="deleteArticle">Delete</button>
+            <button class="btn btn-primary">  Save change </button>
+            <button class="btn btn-danger" @click="deleteArticle"> Delete </button>
         </div>  
 </form>
 </template>

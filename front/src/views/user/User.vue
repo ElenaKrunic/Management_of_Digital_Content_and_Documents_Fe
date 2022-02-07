@@ -3,25 +3,19 @@
   <div class="thumbnail card">
     <div class="card-body">
       <div class="caption-full">
-        <router-link :to="'/userDetails/' + item.id" tag="h5" class="card-title"><a> Pogledaj detalje </a></router-link>
-        <p> {{ item.id }} </p>
+        <router-link :to="'/userDetails/' + item.id" tag="h5" class="card-title"><a> See user details </a></router-link>
         <p> {{ item.firstname }} </p>
         <p> {{ item.lastname }} </p>
+     
       </div>
         <p class="col-6">
-          <button class="btn btn-success pull-right" @click="blockUser()">
-            Block user
-          </button>
+    
         </p>
     </div>
   </div>
 </div>
 </template>
-
-
 <script>
-//import axios from '../../../axiosConfig'
-//import { mapActions } from 'vuex';
 
 export default {
   props: ['item','displayList'],
@@ -30,10 +24,7 @@ export default {
     return {
       selected: 1,
       quantityArray: [],
-      //id: item.id,
-      user: '',
-      //userObject: Object.assign({}, this.item),
-      //id : localStorage.setItem("userId", this.userObject.id)
+      user: ''
     }
   },
   methods: {

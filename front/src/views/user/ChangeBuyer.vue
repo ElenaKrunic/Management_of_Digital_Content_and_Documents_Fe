@@ -2,26 +2,26 @@
     <form @submit.prevent="changeBuyerData">
         <div style="width: 50%; background:white; padding: 5%; border-radius:2%;">
             <div class="mb-3">
-                <label class="form-label" for="pass">Password:</label>                
-                <input class="form-control" type="text" id="pass" v-model="myProfile.pass" />
+                <label class="form-label" for="pass"> Password:</label>                
+                <input class="form-control" type="password" id="pass" v-model="myProfile.pass" />
             </div>
             <div class="mb-3">
                 <label class="form-label" for="address">Address:</label>
                  <input class="form-control" type="text" id="address" v-model="myProfile.address" /> 
             </div>
             <div class="mb-3">
-                <label class="form-label" for="firstname">Firstname:</label>
+                <label class="form-label" for="firstname">First name:</label>
                 <input class="form-control" type="text" id="firstname" v-model="myProfile.firstname" /> 
             </div>
             <div class="mb-3">
-                <label class="form-label" for="lastname">Lastname:</label>
+                <label class="form-label" for="lastname">Last name:</label>
                 <input class="form-control" type="text" id="lastname" v-model="myProfile.lastname" />
             </div>
             <div class="mb-3">
                 <label class="form-label" for="email">Email:</label>
                 <input disabled="disabled" class="form-control" type="email" id="email" v-model="myProfile.email" /> 
             </div>
-            <button class="btn btn-primary"> Update information </button>
+            <button class="btn btn-primary"> Save changes </button>
         </div>
     </form>
 </template>
@@ -57,7 +57,8 @@ export default {
             .then((response) => {
                 this.response = this.myProfile
                 console.log('response je ' + response)
-                alert('ok izmjena')
+                alert('You have changed user information successfully')
+                this.$router.push({ path : '/store'})
             }).catch((error) => {
                 console.log(this.myProfile)
                 console.log(error)

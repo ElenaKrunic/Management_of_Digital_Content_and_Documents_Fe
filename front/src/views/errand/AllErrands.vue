@@ -1,13 +1,8 @@
 <template>
 <div class="container pull-right">
 
-    <div class="row action-panel">
-        <button v-on:click="indexingErrands()" class="btn btn-outline-dark"> Index all your orders </button>
-        <p></p>    
-    </div>  
-
    <div class="row" >
-    <appErrandItem v-for="err in errands" :item="err" :key="err.id" :displayList="displayList"></appErrandItem>
+    <appErrandItem v-for="errand in errands" :item="errand" :key="errand.id" :displayList="displayList"></appErrandItem>
   </div>
 </div>
 </template>
@@ -28,35 +23,24 @@ export default {
         }
     },
     created() {
-        this.getMyErrands()
+        this.getAllErrands()
     },
     components: {
         appErrandItem : ErrandItem
     },
 
     methods: {
-            getMyErrands() {
-                axios.get('api/errands/myErrands')
+            getAllErrands() {
+                //http://localhost:8085/api/user/getUsers
+                axios.get('api/errands/getErrands')
                 .then((response) => {
                     this.errands = response.data
-                    console.log('lalalaal ispisani errandi')
                     //alert('ok')
                 }).catch((error) => {
-                    alert('nije ok')
+                    //alert('nije ok')
                     console.log(error)
-                    this.errorMsg = 'greska tokom ucitavanja erands '
                 })
             },
-
-            indexingErrands() {
-                axios.get('/api/reindexErrands/buyer/' + 2)
-                .then((response) => {
-                    this.indexes = response.data
-                    alert("Errands indexed! ")
-                }).catch((error) => {
-                    console.log(error)
-                })
-            }
         }
 
 }

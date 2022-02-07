@@ -2,42 +2,42 @@
     <form @submit.prevent="addBuyer">
         <div style="width: 50%; background:white; padding: 5%; border-radius:2%;">
             <div class="mb-3">
-                <label class="form-label" for="firstname">Име:</label>
+                <label class="form-label" for="firstname">First name:</label>
                 <input class="form-control" type="text" id="firstName" v-model="formData.firstname" />
             </div>
             <div class="mb-3">
-                <label class="form-label" for="lastname">Презиме:</label>
+                <label class="form-label" for="lastname"> Last name:</label>
                 <input class="form-control" type="text" id="lastName" v-model="formData.lastname" />
             </div>
             <div class="mb-3">
-                <label class="form-label" for="userName">Корисничко име:</label>
+                <label class="form-label" for="userName">Username:</label>
                 <input class="form-control" type="text" id="userName" v-model="formData.username" />
             </div>
             <div class="mb-3">
-                <label class="form-label" for="password">Шифра:</label>
+                <label class="form-label" for="password">Password:</label>
                 <input class="form-control" type="password" id="password" v-model="formData.pass" />
             </div>
             <div class="mb-3">
-                <label class="form-label" for="phone">Број телефона:</label>
+                <label class="form-label" for="phone">Phone number:</label>
                 <input class="form-control" type="text" id="phone" v-model="formData.phone" />
             </div>
              <div class="mb-3">
-                <label class="form-label" for="operatesSince">Радња постоји од:</label>
+                <label class="form-label" for="operatesSince">Store operates since:</label>
                 <input class="form-control" type="text" id="operatesSince" v-model="formData.operatesSince" />
             </div>
             <div class="mb-3">
-                <label class="form-label" for="storeName">Име радње:</label>
+                <label class="form-label" for="storeName">Name of the store:</label>
                 <input class="form-control" type="text" id="storeName" v-model="formData.storeName" />
             </div>
              <div class="mb-3">
-                <label class="form-label" for="address">Адреса:</label>
+                <label class="form-label" for="address">Store address:</label>
                 <input class="form-control" type="text" id="address" v-model="formData.address" />
             </div>
              <div class="mb-3">
-                <label class="form-label" for="email">Адреса електронске поште:</label>
+                <label class="form-label" for="email">Email:</label>
                 <input class="form-control" type="text" id="email" v-model="formData.email" />
             </div>
-            <button class="btn btn-primary"> Региструј се</button>
+            <button class="btn btn-primary"> Register</button>
         </div>
     </form>
 </template>

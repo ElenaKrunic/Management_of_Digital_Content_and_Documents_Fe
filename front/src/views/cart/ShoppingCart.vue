@@ -1,36 +1,36 @@
 <template>
   <div class="container table-responsive">
         <div style="display: block">
-            <p style="margin-bottom:-0.5px"> Search </p>
+            <p style="margin-bottom:-0.5px">  </p>
             <select @change="setApi($event)"  class="form-control">
-                 <option value="gteRange">Greater then or equals</option>
+                 <option value="gteRange"> Greater then or equals</option>
                 <option value="gtRange"> Greater then</option>
-                <option value="lteRange">Less then or equals</option>
-                <option value="ltRange">Less then</option>
+                <option value="lteRange"> Less then or equals</option>
+                <option value="ltRange"> Less then</option>
             </select>
         </div>
         <div style="display :block">
-            <p style="margin: bottom -0.5px;"> Select search value
+            <p style="margin: bottom -0.5px;"> Select a field for search
             </p>
             <select @change="setFormData($event)" class="form-control">
-                <option value="price"> PRICE </option>
+                <option value="price"> Price </option>
             </select>
         </div>
              <div style="display: block;">
         <p style="margin-bottom:-0.5px;"> </p>
         <div class="mb-3">
-              <label class="form-label" for="value">Type search price:</label>
+              <label class="form-label" for="value"> Enter the price:</label>
               <input class="form-control" type="text" id="value" v-model="formData.value"/>
         </div>
     </div>
-    <button @click="getArticleRange" class="btn btn-outline-dark">Submit</button>
+    <button @click="getArticleRange" class="btn btn-outline-dark"> Search</button>
     <table id="cart" class="table table-hover table-sm">
       <thead>
         <tr>
           <th style="width:50%">Product</th>
           <th style="width:10%">Price</th>
           <th style="width:8%">Quantity</th>
-          <th style="width:22%" class="text-center">Subtotal</th>
+          <th style="width:22%" class="text-center"> Total</th>
           <th style="width:10%"></th>
         </tr>
       </thead>
@@ -57,7 +57,7 @@
           <td class="px-0">
             <button class="btn btn-success" @click="checkoutElena">
               <span class="text-nowrap"
-                >Checkout <i class="fa fa-angle-right d-inline"></i
+                > Make an order <i class="fa fa-angle-right d-inline"></i
               ></span>
             </button>
           </td>
@@ -91,7 +91,7 @@ export default {
     return {
       cartItem: {
         id: localStorage.getItem('articleId'),
-        quantity: localStorage.getItem('quantityAdded')
+        quant: localStorage.getItem('quant')
       },  
        articles: [],
             errorMsg: '', 
@@ -112,11 +112,12 @@ export default {
      ...mapMutations(['setSearch']),
     checkoutElena() {
       //http://localhost:8085/api/articles/orderArticle/?id=1&quantity=20
-          axios.post('api/articles/orderArticle/?id=' + this.cartItem.id + "&quantity=" + this.cartItem.quantity)
+          axios.post('api/articles/orderArticle/?id=' + this.cartItem.id + "&quantity=" + this.cartItem.quant)
           .then((response) => {
             this.articles = response.data
             console.log(response)
-            alert("Uspjesno ste izvrsiti naruzbu!")
+            alert("You have successfully made an order!")
+            this.$router.push({ path : '/store'})
           })
           .catch((error) => {
             console.log(error)

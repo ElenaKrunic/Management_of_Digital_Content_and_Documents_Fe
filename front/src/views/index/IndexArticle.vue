@@ -4,7 +4,7 @@
       <v-card dark style="width: 40%; margin-top: 2.5%">
         <v-card-title justify="center">
           <v-col>
-            <h3> Pronadji fajl za indeksiranje </h3>
+            <h3> Find one product for indexing </h3>
           </v-col>
         </v-card-title>
         <form>

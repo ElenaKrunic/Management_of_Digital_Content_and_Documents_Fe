@@ -17,8 +17,8 @@
       </div>
       <div class="ratings">
         <p class="pull-right">
-          <router-link :to="'/updateArticle/' + article.id" tag="h5" class="card-title"><a> Измијени производ </a></router-link>
-          <v-btn @click="generatePDF" class="btn btn-outline-dark"> Преузми PDF документ </v-btn>
+          <router-link :to="'/updateArticle/' + article.id" tag="h5" class="card-title"><a> Update this product </a></router-link>
+          <v-btn @click="generatePDF" class="btn btn-outline-dark"> Download PDF document </v-btn>
         </p>
       </div>
     </div>
@@ -28,7 +28,7 @@
       <v-card dark style="width: 40%; margin-top: 2.5%">
         <v-card-title justify="center">
           <v-col>
-            <h3> Пронађи и индексирај фајл </h3>
+            <h3> Find this product and add it to the index </h3>
           </v-col>
         </v-card-title>
         <form>
@@ -37,12 +37,12 @@
             v-model="form.file"
             accept=".pdf"
             name="file"
-            label="Изабери документ са фајл система"
+            label="Find document from your file system"
             style="width: 65.5%; margin-left: -5%"
           ></v-file-input>
 
           <br />
-          <v-btn class="mr-4" @click="submit"> Потврди </v-btn>
+          <v-btn class="mr-4" @click="submit"> Submit </v-btn>
           <br />
           <br />
         </form>
@@ -128,7 +128,7 @@ export default {
         .post("api/index/add", fd)
         .then((response) => {
           alert(response.data);
-          this.$router.push("/");
+          this.$router.push("/store");
         })
         .catch((error) => {
           console.log(error);

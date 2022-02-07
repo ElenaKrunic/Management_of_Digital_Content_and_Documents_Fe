@@ -8,14 +8,19 @@
             <template v-slot:default>
               <thead>
                 <tr>
-                  <th class="text-left"> Ordered at time:  </th>
-                  <th class="text-left"> Anonymous comment: </th>
+                  <th class="text-left"> Ordered at:  </th>
+                  <th class="text-left"> Is there an anonymous comment present? </th>
+                  <th class="text-left"> Grade: </th>
+                  <th class="text-left"> Comment </th>
                 </tr>
               </thead>
               <tbody>
                 <tr v-for="errand in search" :key="errand.id">
                   <td>{{ errand.orderedAtDate }}</td>
                   <td>{{ errand.anonymousComment }}</td>
+                  <td>{{ errand.grade }}</td>
+                  <td> {{ errand.comment }}</td>
+
                 </tr>
               </tbody>
             </template>

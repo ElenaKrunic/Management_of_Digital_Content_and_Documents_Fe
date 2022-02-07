@@ -14,6 +14,7 @@
 		</td>
 		<td data-th="Price">{{ cartItem.price }}</td>
 		<td data-th="Quantity">
+			{{cartItem.quantity}}
 			<input type="number" class="form-control text-center"
 				:value="cartItem.quantity"
 				@input="updateQuantity"
@@ -32,7 +33,7 @@
 		props: ['cartItem'],
 		computed: {
 			subtotal() {
-				return this.cartItem.quantity * this.cartItem.price;
+			return this.cartItem.quantity * this.cartItem.price;
 			}
 		},
 		methods: {
@@ -49,15 +50,13 @@
 					item: vm.cartItem,
 					quantity: parseInt(event.target.value),
 					isAdd: false,
-					//localStorage.setItem('quantity',)
+					quant : localStorage.setItem('quant', this.cartItem.quantity)
 				});
 			},
-			setQuantity(event) {
-				let quantity = parseInt(event.target.value);
-				let quantityToSend = this.quantity;
-				alert(quantityToSend);
-				console.log(quantity);
-			},
-		}
+			//uzmi quantity vrijednost i posalji ju u shopping cart 
+			getQuantity() {
+				console.log(this.cartItem.quantity);
+			}
+		},
 	}
 </script>
