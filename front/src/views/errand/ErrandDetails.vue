@@ -23,8 +23,15 @@
     </div>
     <br />
     <button class="btn btn-primary" @click="putCommentAndGrade"> Save changes </button>
+    <br>
     &nbsp;
-
+    &nbsp;
+    <br />
+    <div class="">
+        <p class="pull-right">
+          <v-btn @click="generatePDF" class="btn btn-outline-dark"> Download PDF document </v-btn>
+        </p>
+    </div>
 </div>
 </template>
 
@@ -40,7 +47,8 @@ export default {
             errand: {
                 comment: "",
                 grade:0,
-                date: ""
+                date: "",
+                file: ""
             },
             errorMsg: '',
             loaderColor: "#5cb85c",
@@ -71,8 +79,33 @@ export default {
             }).catch((error) => {
                 console.log(error)
             })
+        },
+          generatePDF() { 
+          axios
+            .get('api/errands/errandPdf/' + this.id, { responseType: 'blob'})
+            .then((response) => {
+              //alert('ok');
+              console.log(response);
+              this.article = response.data;
+              const url = window.URL.createObjectURL(new Blob([response.data]));
+              console.log('>>> ovo je url >>>' + url)
+              const link = document.createElement("a");
+              console.log('>>> ovo je link >>>' + link);
+              console.log('>>> link.href >>>' + link.href);
+              link.href = url;
+              link.setAttribute("download", "errand.pdf");
+              document.body.appendChild(link);
+              link.click();
+              link.parentNode.removeChild(link);
+              //this.$router.push('/articleDetails/:' + this.id);
+              this.$router.push('/myErrands');
+            })
+            .catch((error) => {
+              alert('nije ok')
+              console.log(error)
+              this.errorMsg = 'Error retriving data'
+            })
         }
-
     }
 }
 </script>

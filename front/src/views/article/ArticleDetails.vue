@@ -25,7 +25,7 @@
   </div>
   <v-row>
     <v-col align="center" justify="center">
-      <v-card dark style="width: 40%; margin-top: 2.5%">
+      <v-card>
         <v-card-title justify="center">
           <v-col>
             <h3> Find this product and add it to the index </h3>

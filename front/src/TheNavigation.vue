@@ -7,7 +7,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li v-if="buyer != '' && tokenn" id="a" class="navbar-nav">
+        <li v-if="buyer != '' || seller != '' && tokenn" id="a" class="navbar-nav">
             <a href="/selectSearchType" class="nav-link">Select search type</a>
         </li>
         <li v-if="tokenn" id="a" class="navbar-nav">

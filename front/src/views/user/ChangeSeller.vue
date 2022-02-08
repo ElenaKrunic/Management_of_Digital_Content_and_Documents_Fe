@@ -22,10 +22,6 @@
                 <input disabled="disabled" class="form-control" type="email" id="email" v-model="myProfile.email" /> 
             </div>
             <div class="mb-3">
-                <label class="form-label" for="email"> Exists since:</label>
-                <input disabled="disabled" class="form-control" type="date" id="operatesSince" v-model="myProfile.operatesSince" /> 
-            </div>
-            <div class="mb-3">
                 <label class="form-label" for="email"> Name of the store:</label>
                 <input disabled="disabled" class="form-control" type="text" id="storeName" v-model="myProfile.storeName" /> 
             </div>
@@ -53,7 +49,7 @@ export default {
             get('/api/user/mySellerProfile').
             then((response) => {
                 this.myProfile = response.data
-                alert('ok')
+                //alert('ok')
             }).
             catch((error) => {
                 console.log(error)
@@ -64,7 +60,8 @@ export default {
             .put('api/user/changeSellerPassword', this.myProfile)
             .then((response) => {
                 console.log('response je ' + response)
-                alert('ok izmjena')
+                alert('You have changed user information successfully')
+                //alert('ok izmjena')
             }).catch((error) => {
                 console.log(error)
             })

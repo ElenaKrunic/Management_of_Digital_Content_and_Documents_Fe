@@ -49,7 +49,7 @@ export default {
             },
 
             indexingErrands() {
-                axios.get('/api/reindexErrands/buyer/' + 2)
+                axios.get('/api/index/reindexErrands/buyer/' + 2)
                 .then((response) => {
                     this.indexes = response.data
                     alert("Errands indexed! ")
